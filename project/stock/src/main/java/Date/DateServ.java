@@ -97,7 +97,7 @@ public class DateServ {
 	     
 		
 	}
-	//获得certaindate前time天的日期
+	//获得certaindate前time天的日期,time>=1
 	public static String getDateBefore(long time,String certaindate){
 		Format f = new SimpleDateFormat("yyyy-MM-dd");
 		Calendar c = Calendar.getInstance();
@@ -108,15 +108,15 @@ public class DateServ {
 		if(time==0){
 			return date;
 		}
-		for(long i=0;i<=time;i++){
+		for(long i=0;i<time;i++){
+			date=f.format(new Date().getTime()-i*24*60*60*1000);
 			week--;
 			if(week<0){
 				week+=7;
 			}
-			if(week%7==0||week%7==6||date.compareTo(certaindate)>0){
+			if(week%7==0||week%7==6||date.compareTo(certaindate)>=0){
 				time++;
 			}
-			date=f.format(new Date().getTime()-(i+1)*24*60*60*1000);
 			
 		}
 		return date;
@@ -155,6 +155,10 @@ public class DateServ {
 		}
 		return dateBefore;
 		
+	}
+	
+	public static void main(String args[]){
+		System.out.println(getDateBefore(1, "2016-04-01"));
 	}
 	
 	

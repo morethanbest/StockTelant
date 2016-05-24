@@ -5,6 +5,7 @@ import java.util.List;
 import dataService.SimpleInfoDataService;
 import logicService.SimpleInfoLogicService;
 import po.SimpleInfoPO;
+import vo.OriginInfoVO;
 
 public class SimpleInfoLogic implements SimpleInfoLogicService {
 	private SimpleInfoDataService dataService;
@@ -56,8 +57,9 @@ public class SimpleInfoLogic implements SimpleInfoLogicService {
 		this.dataService = dataService;
 	}
 
-	public List<SimpleInfoPO> getOriginList(){
-		return dataService.getOriginList();
+	public List<OriginInfoVO> getOriginList(){
+		List<OriginInfoVO> list=TransObject.transToOriginList(dataService.getOriginList());
+		return list;
 	}
 	
 

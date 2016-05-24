@@ -3,11 +3,13 @@ package controller;
 import java.util.List;
 
 import logicService.UserBLService;
-import po.SimpleInfoPO;
+import vo.OriginInfoVO;
 
 public class UserController {
 	private UserBLService blService;
 
+	//返回1表示成功，返回0表示失败
+	
 	public void setBlService(UserBLService blService) {
 		this.blService = blService;
 	}
@@ -20,10 +22,11 @@ public class UserController {
 		// TODO Auto-generated method stub
 		return blService.checkUser(id, password);
 	}
-
-	public int reviseCode(String id, String password) {
+	
+	//返回1表示成功，返回0表示失败,返回2表示原密码错误
+	public int reviseCode(String id, String originpassword,String newpassword) {
 		// TODO Auto-generated method stub
-		return blService.reviseCode(id, password);
+		return blService.reviseCode(id, originpassword, newpassword);
 	}
 
 	public int addUserStock(String id, String stocks) {
@@ -40,7 +43,7 @@ public class UserController {
 		// TODO Auto-generated method stub
 		return blService.searchStock(id);
 	}
-	public List<SimpleInfoPO> getChosenStock(String id) {
+	public List<OriginInfoVO> getChosenStock(String id) {
 		return blService.getChosenStock(id);
 	}
 }

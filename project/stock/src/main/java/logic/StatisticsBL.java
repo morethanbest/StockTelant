@@ -5,7 +5,7 @@ import java.util.List;
 
 import dataService.ChosenStockService;
 import dataService.SpecificInfoDataService;
-import logicService.GraphBLserivce;
+import logicService.GraphBLService;
 import logicService.StatisticsBLService;
 import vo.AR;
 import vo.BR;
@@ -19,7 +19,7 @@ public class StatisticsBL implements StatisticsBLService {
 
 	private ChosenStockService ChosenService;
 	private SpecificInfoDataService specificService;
-	private GraphBLserivce graphBLserivce;
+	private GraphBLService graphBLserivce;
 		
 	
 	public void setChosenService(ChosenStockService chosenService) {
@@ -31,7 +31,7 @@ public class StatisticsBL implements StatisticsBLService {
 		this.specificService = specificService;
 	}
 
-	public void setGraphBLserivce(GraphBLserivce graphBLserivce) {
+	public void setGraphBLserivce(GraphBLService graphBLserivce) {
 		this.graphBLserivce = graphBLserivce;
 	}
 

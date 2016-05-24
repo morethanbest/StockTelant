@@ -6,7 +6,7 @@ import java.util.List;
 import dataService.SimpleInfoDataService;
 import dataService.UserService;
 import logicService.UserBLService;
-import po.SimpleInfoPO;
+import vo.OriginInfoVO;
 
 public class UserBL implements UserBLService {
 
@@ -43,9 +43,12 @@ public class UserBL implements UserBLService {
 	}
 
 	@Override
-	public int reviseCode(String id, String password) {
+	public int reviseCode(String id, String originpassword,String newpassword)  {
 		// TODO Auto-generated method stub
-		return userData.reviseCode(id, password);
+		if(checkUser(id, originpassword)==0){
+			return 2;
+		}
+		return userData.reviseCode(id, newpassword);
 	}
 
 	@Override
@@ -67,7 +70,7 @@ public class UserBL implements UserBLService {
 	}
 
 	@Override
-	public List<SimpleInfoPO> getChosenStock(String id) {
+	public List<OriginInfoVO> getChosenStock(String id) {
 		// TODO Auto-generated method stub
 		List<String> name=searchStock(id);
 		List<String> code=new ArrayList<>();
@@ -76,7 +79,8 @@ public class UserBL implements UserBLService {
 			strings=s.split(" ");
 			code.add(strings[0]);
 		}
-		return simpleInfoDataService.getSimpleInfoByCode(code);
+		List<OriginInfoVO> vos=TransObject.transToOriginList(simpleInfoDataService.getSimpleInfoByCode(code));
+		return vos;
 	}
 	
 }

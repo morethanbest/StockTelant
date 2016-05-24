@@ -2,7 +2,7 @@ package controller;
 
 import java.util.List;
 
-import logicService.GraphBLserivce;
+import logicService.GraphBLService;
 import net.sf.json.JSONArray;
 import vo.AR;
 import vo.ATR;
@@ -19,9 +19,9 @@ import vo.VR;
 import vo.WMS;
 
 public class GraphController {
-	private GraphBLserivce bLserivce;
+	private GraphBLService bLserivce;
 	
-	public void setbLserivce(GraphBLserivce bLserivce) {
+	public void setbLserivce(GraphBLService bLserivce) {
 		this.bLserivce = bLserivce;
 	}
 	//根据日期得到K线图的数据

@@ -23,6 +23,17 @@
       
       
     <!--controller-->   
+    <bean id="SimpleInfoController" class="controller.SimpleInfoController">
+    	<property name="simple">
+    		<ref bean="SimpleInfoBL"></ref>
+    	</property>
+    </bean>
+    
+    <bean id="UserController" class="controller.UserController">
+    	<property name="blService">
+    		<ref bean="UserBL"></ref>
+    	</property>
+    </bean>
 	<bean id="GraphController" class="controller.GraphController">
 		<property name="bLserivce">
 			<ref bean="GraphBL"></ref>
@@ -50,6 +61,12 @@
 	
 	
 	<!--logic-->   
+	
+	<bean id="SimpleInfoBL" class="logic.SimpleInfoLogic">
+		<property name="dataService">
+			<ref bean="SimpleInfoData"></ref>
+		</property>
+	</bean>
 	<bean id="chosenStockBL" class="logic.ChosenStockBL">
 		<property name="service" >
 		<ref bean="chosenStockData"></ref>
@@ -81,14 +98,27 @@
 		<property name="specificService">
 			<ref bean="SpecificInfoData"></ref>
 		</property>
+		<property name="graphBLserivce" >
+			<ref bean="GraphBL"></ref>
+		</property>
+	</bean>
+	
+	<bean id="UserBL" class="logic.UserBL">
+		<property name="userData">
+			<ref bean="UserData"></ref>
+		</property>
+		<property name="simpleInfoDataService">
+			<ref bean="SimpleInfoData"></ref>
+		</property>
 	</bean>
 	
 	
 	
 	
 	
-	
 	<!--data-->   
+	<bean id="UserData" class="DataWeb.UserData">
+	</bean>
 	<bean id="chosenStockData" class="DataWeb.ChosenStockData">
 	</bean>
 	
@@ -96,6 +126,8 @@
 	</bean>
 	
 	<bean id="SpecificInfoData" class="DataWeb.SpecificInfoData">
+	</bean>
+	<bean id="SimpleInfoData" class="DataWeb.SimpleInfoData">
 	</bean>
 	
 </beans>

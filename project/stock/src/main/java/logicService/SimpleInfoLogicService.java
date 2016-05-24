@@ -22,5 +22,5 @@ public interface SimpleInfoLogicService {
 //    public List<String> getCodeName(String code,Exchange exchange);
     
     
-	public List<SimpleInfoPO> getOriginList();
+	public List<OriginInfoVO> getOriginList();
 }

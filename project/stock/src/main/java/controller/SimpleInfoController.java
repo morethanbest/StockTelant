@@ -4,6 +4,7 @@ import java.util.List;
 
 import logicService.SimpleInfoLogicService;
 import po.SimpleInfoPO;
+import vo.OriginInfoVO;
 
 
 public class SimpleInfoController {
@@ -14,7 +15,7 @@ public class SimpleInfoController {
 		this.simple = simple;
 	}
 
-	public List<SimpleInfoPO> getOriginList(){
+	public List<OriginInfoVO> getOriginList(){
 		return simple.getOriginList();
 	}
 }

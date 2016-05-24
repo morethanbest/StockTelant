@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import logic.GraphBL;
-import logicService.GraphBLserivce;
+import logicService.GraphBLService;
 import vo.DealVO;
 import vo.KVO;
 

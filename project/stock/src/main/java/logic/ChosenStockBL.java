@@ -61,7 +61,7 @@ public class ChosenStockBL implements ChosenStockBLService {
 			voList.add(0, new OriginInfoVO(po.getDate(), po.getCode(),"沪深300", po.getOpen(), po.getClose(), po.getHighest()
 				, po.getLowest(), po.getVolume()));	
 		}catch(Exception e){
-			System.out.println("大盘信息出错！！");
+			e.printStackTrace();
 		}
 		return voList;
 	}

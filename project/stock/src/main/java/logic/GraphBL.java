@@ -7,7 +7,7 @@ import Date.DateServ;
 import dataService.ChosenStockService;
 import dataService.GraphService;
 import dataService.SpecificInfoDataService;
-import logicService.GraphBLserivce;
+import logicService.GraphBLService;
 import po.BenchmarkPO;
 import po.DealPO;
 import po.DealPie;
@@ -27,7 +27,7 @@ import vo.RSV;
 import vo.VR;
 import vo.WMS;
 
-public class GraphBL implements GraphBLserivce {
+public class GraphBL implements GraphBLService {
 	private GraphService graphService;
 	private ChosenStockService chosenStockService;
 	private SpecificInfoDataService specificInfoDataService;
@@ -245,7 +245,7 @@ public List<AR> getAR(String code,String starttime,String endtime){
 		
 		//默认是26天
 		List<AR> ARS=new ArrayList<>();
-		String rangestart=DateServ.getDateBefore(26, starttime);
+		String rangestart=DateServ.getDateBefore(25, starttime);
 		List<SpecificInfoPO> pos=specificInfoDataService.getInfoByRange(code, rangestart, endtime);
 		double sumHO=0;
 		double sumOL=0;
@@ -253,7 +253,7 @@ public List<AR> getAR(String code,String starttime,String endtime){
 		if(pos.size()==0){
 			return ARS;
 		}
-		for(int i=0;i<pos.size()-26;i++){
+		for(int i=0;i<pos.size()-25;i++){
 			sumHO=0;
 			sumOL=0;
 			for(int j=0;j<26;j++){
@@ -261,7 +261,7 @@ public List<AR> getAR(String code,String starttime,String endtime){
 				sumHO+=Double.parseDouble(po.getHighest())-Double.parseDouble(po.getOpen());
 				sumOL+=Double.parseDouble(po.getOpen())-Double.parseDouble(po.getLowest());
 			}
-			ARS.add(new AR(pos.get(i+26).getDate(),sumHO/sumOL*100));
+			ARS.add(new AR(pos.get(i+25).getDate(),sumHO/sumOL*100));
 		}
 		return  ARS;
 	}
@@ -270,21 +270,21 @@ public List<AR> getAR(String code,String starttime,String endtime){
 	public List<BR> getBR(String code,String starttime,String endtime){
 		//默认是26天
 		List<BR> BRS=new ArrayList<>();
-		String rangestart=DateServ.getDateBefore(27, starttime);
+		String rangestart=DateServ.getDateBefore(26, starttime);
 		List<SpecificInfoPO> pos=specificInfoDataService.getInfoByRange(code, rangestart, endtime);
 		double sumHO=0;
 		double sumOL=0;
 		if(pos.size()==0){
 			return BRS;
 		}
-		for(int i=0;i<pos.size()-27;i++){
+		for(int i=0;i<pos.size()-26;i++){
 			sumHO=0;
 			sumOL=0;
 			for(int j=0;j<26;j++){
 			sumHO+=Double.parseDouble(pos.get(i+j+1).getHighest())-Double.parseDouble(pos.get(i+j).getClose());
 			sumOL+=Double.parseDouble(pos.get(i+j).getClose())-Double.parseDouble(pos.get(i+j+1).getLowest());
 			}
-			BRS.add(new BR(pos.get(i+27).getDate(),sumHO/sumOL*100));
+			BRS.add(new BR(pos.get(i+26).getDate(),sumHO/sumOL*100));
 		}
 		return  BRS;
 	}
@@ -297,14 +297,15 @@ public List<AR> getAR(String code,String starttime,String endtime){
 		List<SpecificInfoPO> pos=specificInfoDataService.getInfoByRange(code, rangestart, endtime);
 		double upn=0;
 		double downn=0;
-		for(int i=1;i<pos.size()-25;i++){
-			for(int j=0;j<12;j++)
-			if(Double.parseDouble(pos.get(i+j-1).getClose())>Double.parseDouble(pos.get(i+j).getClose())){
-				upn+=Double.parseDouble(pos.get(i+j-1).getVolume())*Double.parseDouble(pos.get(i+j-1).getClose());
+		for(int i=0;i<pos.size()-26;i++){
+			for(int j=0;j<26;j++){
+			if(Double.parseDouble(pos.get(i+j).getClose())>Double.parseDouble(pos.get(i+j+1).getClose())){
+				upn+=Double.parseDouble(pos.get(i+j+1).getVolume())*Double.parseDouble(pos.get(i+j+1).getClose());
 			}else{
-				downn+=Double.parseDouble(pos.get(i+j-1).getVolume())*Double.parseDouble(pos.get(i+j-1).getClose());
+				downn+=Double.parseDouble(pos.get(i+j+1).getVolume())*Double.parseDouble(pos.get(i+j+1).getClose());
 			}
-			VR.add(new VR(pos.get(i+11).getDate(),upn/downn*100));			//*100%
+			}
+			VR.add(new VR(pos.get(i+26).getDate(),upn/downn*100));			//*100%
 			
 		}
 		return VR;
@@ -315,7 +316,7 @@ public List<AR> getAR(String code,String starttime,String endtime){
 	public List<WMS> getWMS(String code,String starttime,String endtime){
 		//默认是14天
 		List<WMS> WMS=new ArrayList<>();
-		String rangestart=DateServ.getDateBefore(14, starttime);
+		String rangestart=DateServ.getDateBefore(13, starttime);
 		List<SpecificInfoPO> pos=specificInfoDataService.getInfoByRange(code, rangestart, endtime);
 		if(pos.size()==0){
 			return WMS;
@@ -327,8 +328,8 @@ public List<AR> getAR(String code,String starttime,String endtime){
 		double close;
 		double temphigh;
 		double templow;
-		for(int i=0;i<pos.size()-14;i++){
-			lastpo=pos.get(i+14);
+		for(int i=0;i<pos.size()-13;i++){
+			lastpo=pos.get(i+13);
 			highest=Double.parseDouble(lastpo.getHighest());
 			lowest=Double.parseDouble(lastpo.getLowest());
 			close=Double.parseDouble(lastpo.getClose());
@@ -343,7 +344,7 @@ public List<AR> getAR(String code,String starttime,String endtime){
 					lowest=templow;
 				}
 			}
-			WMS.add(new WMS(pos.get(i+14).getDate(),(highest-close)/(highest-lowest)*100));
+			WMS.add(new WMS(pos.get(i+13).getDate(),(highest-close)/(highest-lowest)*100));
 		}
 		return WMS;
 	}
