@@ -323,92 +323,9 @@ JSONArray kjs = (JSONArray)session.getAttribute("k");
 					</div>
 				<div class="area">
 					<div class="col-md-6 chrt-two area">
-						<h3 class="sub-tittle">Line Multi Chart</h3>
-							<div style="area">
-								<canvas id="canvas" style="width:100%;height:100%"></canvas>
-							</div>
-								<button id="randomizeData">Randomize Data</button>
-										<script>
-												var randomScalingFactor = function() {
-												return Math.round(Math.random() * 100 * (Math.random() > 0.5 ? -1 : 1));
-													};
-												var randomColor = function(opacity) {
-												return 'rgba(' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ',' + (opacity || '.3') + ')';
-													};
-
-												var lineChartData = {
-													labels: ["January", "February", "March", "April", "May", "June", "July"],
-													datasets: [{
-														label: "My First dataset",
-														data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
-														yAxisID: "y-axis-1",
-														}, {
-																label: "My Second dataset",
-																data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
-																	yAxisID: "y-axis-2"
-																	}]
-																};
-
-																$.each(lineChartData.datasets, function(i, dataset) {
-																	dataset.borderColor = randomColor(0.4);
-																	dataset.backgroundColor = randomColor(1);
-																	dataset.pointBorderColor = randomColor(0.7);
-																	dataset.pointBackgroundColor = randomColor(0.5);
-																	dataset.pointBorderWidth = 1;
-																});
-
-																console.log(lineChartData);
-
-																window.onload = function() {
-																	var ctx = document.getElementById("canvas").getContext("2d");
-																	window.myLine = Chart.Line(ctx, {
-																		data: lineChartData,
-																		options: {
-																			
-																			hoverMode: 'label',
-																			stacked: false,
-																			scales: {
-																				xAxes: [{
-																					display: true,
-																					gridLines: {
-																						offsetGridLines: false
-																					}
-																				}],
-																				yAxes: [{
-																					type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-																					display: true,
-																					position: "left",
-																					id: "y-axis-1",
-																				}, {
-																					type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-																					display: true,
-																					position: "right",
-																					id: "y-axis-2",
-
-																					// grid line settings
-																					gridLines: {
-																						drawOnChartArea: false, // only want the grid lines for one axis to show up
-																					},
-																				}],
-																			}
-																		}
-																	});
-																};
-
-																$('#randomizeData').click(function() {
-																	lineChartData.datasets[0].data = [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()];
-
-																	lineChartData.datasets[1].data = [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()];
-
-																	window.myLine.update();
-																});
-										</script>
-											<script src="js/Chart.js"></script>
-					</div>
-					<div class="col-md-6 chrt-three">
-						<h3 class="sub-tittle">Stacked bar chart</h3>
-							<div id="chartdiv1"></div>	
-							<%JSONArray js1 = (JSONArray)session.getAttribute("js");%>
+						<h3 class="sub-tittle">人气指标</h3>
+						<div id="chartdiv1"></div>	
+						<%JSONArray js1 = (JSONArray)session.getAttribute("AR");%>
 									<script>
 									
 									var chart1;
@@ -438,15 +355,15 @@ JSONArray kjs = (JSONArray)session.getAttribute("k");
 						                valueAxis.inside = true;
 						                valueAxis.tickLength = 0;
 						                valueAxis.axisAlpha = 0;
-						                valueAxis.minimum = 100;
-						                valueAxis.maximum = 140;
+						                valueAxis.minimum = 0;
+						                valueAxis.maximum = 200;
 						                chart1.addValueAxis(valueAxis);
 
 						                // GRAPH
 						                var graph = new AmCharts.AmGraph();
 						                graph.dashLength = 3;
 						                graph.lineColor = "#7717D7";
-						                graph.valueField = "BR";
+						                graph.valueField = "AR";
 						                graph.dashLength = 3;
 						                graph.bullet = "round";
 						                chart1.addGraph(graph);
@@ -458,31 +375,16 @@ JSONArray kjs = (JSONArray)session.getAttribute("k");
 
 						                // GUIDES are used to create horizontal range fills
 						                var guide = new AmCharts.Guide();
-						                guide.value = 0;
-						                guide.toValue = 105;
+						                guide.value = 120;
+						                guide.toValue = 200;
 						                guide.fillColor = "#CC0000";
 						                guide.fillAlpha = 0.2;
 						                guide.lineAlpha = 0;
 						                valueAxis.addGuide(guide);
 
-						                var guide = new AmCharts.Guide();
-						                guide.value = 105;
-						                guide.toValue = 110;
-						                guide.fillColor = "#CC0000";
-						                guide.fillAlpha = 0.15;
-						                guide.lineAlpha = 0;
-						                valueAxis.addGuide(guide);
 
 						                var guide = new AmCharts.Guide();
-						                guide.value = 110;
-						                guide.toValue = 115;
-						                guide.fillColor = "#CC0000";
-						                guide.fillAlpha = 0.1;
-						                guide.lineAlpha = 0;
-						                valueAxis.addGuide(guide);
-
-						                var guide = new AmCharts.Guide();
-						                guide.value = 115;
+						                guide.value = 80;
 						                guide.toValue = 120;
 						                guide.fillColor = "#CC0000";
 						                guide.fillAlpha = 0.05;
@@ -490,61 +392,101 @@ JSONArray kjs = (JSONArray)session.getAttribute("k");
 						                valueAxis.addGuide(guide);
 
 						                var guide = new AmCharts.Guide();
-						                guide.value = 120;
-						                guide.toValue = 125;
+						                guide.value = 0;
+						                guide.toValue = 80;
 						                guide.fillColor = "#0000cc";
 						                guide.fillAlpha = 0.05;
 						                guide.lineAlpha = 0;
 						                valueAxis.addGuide(guide);
 
-						                var guide = new AmCharts.Guide();
-						                guide.value = 125;
-						                guide.toValue = 130;
-						                guide.fillColor = "#0000cc";
-						                guide.fillAlpha = 0.1;
-						                guide.lineAlpha = 0;
-						                valueAxis.addGuide(guide);
 
-						                var guide = new AmCharts.Guide();
-						                guide.value = 130;
-						                guide.toValue = 135;
-						                guide.fillColor = "#0000cc";
-						                guide.fillAlpha = 0.15;
-						                guide.lineAlpha = 0;
-						                valueAxis.addGuide(guide);
-
-						                var guide = new AmCharts.Guide();
-						                guide.value = 135;
-						                guide.toValue = 140;
-						                guide.fillColor = "#0000cc";
-						                guide.fillAlpha = 0.2;
-						                guide.lineAlpha = 0;
-						                valueAxis.addGuide(guide);
 
 						                // WRITE
 						                chart1.write("chartdiv1");
 						            });
 
-						            // generate some random data
-						            function generateChartData() {
-						                var firstDate = new Date();
-						                firstDate.setDate(firstDate.getDate() - 10);
+									</script>
+					</div>
+					<div class="col-md-6 chrt-three area">
+						<h3 class="sub-tittle">意愿指标</h3>
+							<div id="chartdiv2"></div>	
+							<%JSONArray js2 = (JSONArray)session.getAttribute("BR");%>
+							<script>
+									
+									var chart2;
 
-						                for (var i = 0; i < 10; i++) {
-											// we create date objects here. In your data, you can have date strings
-											// and then set format of your dates using chart.dataDateFormat property,
-											// however when possible, use date objects, as this will speed up chart rendering.
-						                    var newDate = new Date(firstDate);
-						                    newDate.setDate(newDate.getDate() + i);
+						            var chartData2 = <%=js2%>;
 
-						                    var visits = Math.round(Math.random() * 40) + 100;
+						            AmCharts.ready(function () {
+						                // generate some random data first
+						                
 
-						                    chartData1.push({
-						                        date: newDate,
-						                        visits: visits
-						                    });
-						                }
-						            }
+						                // SERIAL CHART
+						                chart2 = new AmCharts.AmSerialChart();
+
+						                chart2.marginLeft = 0;
+						                chart2.marginRight = 0;
+						                chart2.marginTop = 0;
+						                chart2.dataProvider = chartData2;
+						                chart2.categoryField = "date";
+
+						                // AXES
+						                // category
+						                var categoryAxis = chart2.categoryAxis;
+						                categoryAxis.parseDates = true; // as our data is date-based, we set parseDates to true
+						                categoryAxis.minPeriod = "DD"; // our data is daily, so we set minPeriod to DD
+						                // value axis
+						                var valueAxis = new AmCharts.ValueAxis();
+						                valueAxis.inside = true;
+						                valueAxis.tickLength = 0;
+						                valueAxis.axisAlpha = 0;
+						                valueAxis.minimum = 0;
+						                valueAxis.maximum = 200;
+						                chart2.addValueAxis(valueAxis);
+
+						                // GRAPH
+						                var graph = new AmCharts.AmGraph();
+						                graph.dashLength = 3;
+						                graph.lineColor = "#7717D7";
+						                graph.valueField = "BR";
+						                graph.dashLength = 3;
+						                graph.bullet = "round";
+						                chart2.addGraph(graph);
+
+						                // CURSOR
+						                var chartCursor = new AmCharts.ChartCursor();
+						                chartCursor.cursorAlpha = 0;
+						                chart2.addChartCursor(chartCursor);
+
+						                // GUIDES are used to create horizontal range fills
+						                var guide = new AmCharts.Guide();
+						                guide.value = 120;
+						                guide.toValue = 200;
+						                guide.fillColor = "#CC0000";
+						                guide.fillAlpha = 0.2;
+						                guide.lineAlpha = 0;
+						                valueAxis.addGuide(guide);
+
+
+						                var guide = new AmCharts.Guide();
+						                guide.value = 80;
+						                guide.toValue = 120;
+						                guide.fillColor = "#CC0000";
+						                guide.fillAlpha = 0.05;
+						                guide.lineAlpha = 0;
+						                valueAxis.addGuide(guide);
+
+						                var guide = new AmCharts.Guide();
+						                guide.value = 0;
+						                guide.toValue = 80;
+						                guide.fillColor = "#0000cc";
+						                guide.fillAlpha = 0.05;
+						                guide.lineAlpha = 0;
+						                valueAxis.addGuide(guide);
+						                // WRITE
+						                chart2.write("chartdiv2");
+						            });
+
 									</script>
 					</div>
 					<div class="clearfix"></div>

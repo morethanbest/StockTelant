@@ -258,7 +258,9 @@ JSONArray kjs = gc.getBenchmarkKdate("2010-01-01", "2016-05-01");
 												<div class="login">
 													<div id="loginContainer">
 													<%Cookie[] user = request.getCookies();
-													if(user.length <= 1) {%>
+													if(user == null) {%>
+													<a id="loginButton" class=""><span>Login</span></a>
+													<%} else if(user.length <= 1){%>
 													<a id="loginButton" class=""><span>Login</span></a>
 													<%} else {%>
 													<a id="loginButton" class=""><span><%=user[1].getName()%></span></a>

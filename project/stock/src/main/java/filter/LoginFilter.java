@@ -30,7 +30,10 @@ public class LoginFilter implements Filter {
 		String contextPath = request.getContextPath();
 		if (url.equals(""))
 			url += "/";
-		if ((url.startsWith("/") && !url.startsWith("/login") && !url.startsWith("/home"))) {// 若访问后台资源
+		if ((url.startsWith("/") && !url.startsWith("/login") &&
+				!url.startsWith("/js/") && !url.startsWith("/css/") 
+				&& !url.startsWith("/image/") && !url.startsWith("/amcharts/") &&
+				!url.startsWith("/home"))) {// 若访问后台资源
 																								// 过滤到login
 			Cookie[] user = request.getCookies();
 			if (user.length == 1) {// 转入登陆页面

@@ -42,11 +42,14 @@ public class StockInfo extends ActionSupport {
 		List<ConcreteInfoVO> concrete = controller.getInfoByRange("2010-01-01", "2016-05-01", stockNumber);
 		JSONArray k = controller2.getKdate(stockNumber, "2010-01-01", "2016-05-01");
 		JSONArray js = controller2.getBR(stockNumber, "2016-04-01", "2016-05-01");
+		JSONArray js2 = controller2.getAR(stockNumber, "2016-04-01", "2016-05-01");
+		System.out.println(js);
 		session.put("concrete", concrete);
 		session.put("k", k);
 		session.put("name", concrete.get(0).getName());
 		session.put("code", stockNumber);
-		session.put("js", js);
+		session.put("BR", js);
+		session.put("AR", js2);
 		return SUCCESS;
 	}
 

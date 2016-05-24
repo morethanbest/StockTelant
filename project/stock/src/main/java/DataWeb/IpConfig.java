@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class IpConfig {
-	public static final String ip="172.28.185.254";
+	public static final String ip="172.25.169.102";
 	public void getIp(){
 		FileReader file = null;
 		try {
