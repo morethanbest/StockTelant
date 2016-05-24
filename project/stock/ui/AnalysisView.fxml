@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="434.0" prefWidth="874.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.AnalysisController">
+   <children>
+      <TableView fx:id="stockTable" prefHeight="434.0" prefWidth="440.0">
+        <columns>
+          <TableColumn fx:id="nameColumn" prefWidth="88.0" text="股票名称" />
+          <TableColumn fx:id="codeColumn" prefWidth="88.0" text="股票编号" />
+            <TableColumn fx:id="ARColumn" prefWidth="88.0" text="AR" />
+            <TableColumn fx:id="BRColumn" prefWidth="88.0" text="BR" />
+            <TableColumn fx:id="WMSColumn" prefWidth="88.0" text="WMS" />
+        </columns>
+      </TableView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff4721" height="16.0" layoutX="480.0" layoutY="47.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#23ff21" height="16.0" layoutX="480.0" layoutY="78.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#21d2ff" height="16.0" layoutX="480.0" layoutY="109.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+      <Label layoutX="520.0" layoutY="153.0" text="AR(&gt;120)      BR(&gt;150)      WMS(&gt;80)" />
+      <Label layoutX="520.0" layoutY="191.0" text="AR(80~120)  BR(70~150)  WMS(20~80)" />
+      <Label layoutX="520.0" layoutY="229.0" text="AR(&lt;80)        BR(&lt;70)        WMS(&lt;20)" />
+      <Label layoutX="480.0" layoutY="280.0" text="由AR得：">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="480.0" layoutY="329.0" text="由BR得：">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="480.0" layoutY="377.0" text="由WMS得：">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="summaryAR" layoutX="541.0" layoutY="280.0" text="无">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="summaryBR" layoutX="541.0" layoutY="329.0" text="无">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="summaryWMS" layoutX="559.0" layoutY="377.0" text="无">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="536.0" layoutY="16.0" text="AR" />
+      <Label layoutX="608.0" layoutY="16.0" text="BR" />
+      <Label layoutX="674.0" layoutY="16.0" text="WMS" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff4721" height="16.0" layoutX="480.0" layoutY="152.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#23ff21" height="16.0" layoutX="480.0" layoutY="190.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#21d2ff" height="16.0" layoutX="480.0" layoutY="228.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+      <Label fx:id="AR1" layoutX="528.0" layoutY="47.0" text="0" />
+      <Label fx:id="BR1" layoutX="600.0" layoutY="47.0" text="0" />
+      <Label fx:id="WMS1" layoutX="670.0" layoutY="47.0" text="0" />
+      <Label fx:id="AR2" layoutX="528.0" layoutY="78.0" text="0" />
+      <Label fx:id="BR2" layoutX="600.0" layoutY="78.0" text="0" />
+      <Label fx:id="WMS2" layoutX="670.0" layoutY="78.0" text="0" />
+      <Label fx:id="AR3" layoutX="528.0" layoutY="110.0" text="0" />
+      <Label fx:id="BR3" layoutX="600.0" layoutY="110.0" text="0" />
+      <Label fx:id="WMS3" layoutX="670.0" layoutY="110.0" text="0" />
+      <Line endX="70.0" layoutX="649.0" layoutY="14.0" startX="-180.0" />
+      <Line endX="70.0" layoutX="649.0" layoutY="130.0" startX="-180.0" />
+      <Line endX="50.0" layoutX="730.0" layoutY="72.0" rotate="90.0" startX="-66.0" />
+      <Line endX="50.0" layoutX="660.0" layoutY="72.0" rotate="90.0" startX="-66.0" />
+      <Line endX="50.0" layoutX="590.0" layoutY="72.0" rotate="90.0" startX="-66.0" />
+      <Line endX="50.0" layoutX="520.0" layoutY="72.0" rotate="90.0" startX="-66.0" />
+      <Line endX="50.0" layoutX="475.0" layoutY="72.0" rotate="90.0" startX="-66.0" />
+      <Line endX="70.0" layoutX="649.0" layoutY="38.0" startX="-180.0" />
+      <Line endX="70.0" layoutX="649.0" layoutY="69.0" startX="-180.0" />
+      <Line endX="70.0" layoutX="649.0" layoutY="99.0" startX="-180.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,27 @@
+who:孙康
+
+
+when:第八周
+
+what:修复了数据层的一些问题和bug。
+
+
+problem:   
+
+todo:帮助其他组员的工作
+who:宋子微when:第八周
+
+what:完善逻辑层，修复一些bug problem: 逻辑功能不够多  
+
+todo:完善逻辑功能
+who:孙超when:第八周
+
+what:测试界面层，修复发现的bug problem: 界面有些功能交互不太好  
+
+todo:完善美化界面
+who:王新宇when:第八周
+
+what:完善界面层，修复发现的bug problem: 界面有些功能交互不太好  
+
+todo:完善美化界面
+

@@ -1,0 +1,5 @@
+who:孙超，宋子微，王新宇，孙康
+when：第七周
+what：进行了迭代二的实现工作的讨论，界面细节的讨论
+how long：7.5h
+arrived solution：项目接近实现

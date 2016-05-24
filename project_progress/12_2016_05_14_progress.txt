@@ -1,0 +1,23 @@
+who:孙康
+
+
+
+
+when:第十二周
+
+
+
+what:这一周初步体验了一下hibernate框架在数据层的作用，后来决定不适用hibernate框架，完成了数据库各种表单的加入工作（及维护），完成部分实现。
+
+problem:
+todo:数据层和逻辑层还有接口需要加入，数据库中数据还不完整。数据库过大，无法上传给组员。
+who:王新宇when:第十二周
+
+what:开始网页设计 problem: 时间紧迫  
+
+todo:编写jsp网页界面
+who:孙超when:第十二周
+
+what:使用web编程，使用jsp problem: 图表的复杂性  
+
+todo:编写jsp网页界面

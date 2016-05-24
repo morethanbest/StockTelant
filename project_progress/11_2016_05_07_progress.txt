@@ -1,0 +1,25 @@
+who:孙康
+
+
+
+when:第十一周
+
+
+what:这一周并没有做实际的编程任务，找了几本java web的书在读。同时在电脑上安装了XAMPP软件包
+problem:
+todo:初步搭建一个web框架
+who:宋子微when:第十一周
+
+what:能简单地将web与项目结合起来 problem: web项目下的文件路径有问题  
+
+todo:使用web技术封装接口
+who:孙超when:第十一周
+
+what:初步尝试jsp的编写 problem: jar包导入问题  
+
+todo:编写jsp网页界面
+who:孙超when:第十一周
+
+what:初步尝试jsp的编写 problem: jar包导入问题  
+
+todo:编写jsp网页界面

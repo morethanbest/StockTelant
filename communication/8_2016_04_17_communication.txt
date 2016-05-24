@@ -1,0 +1,5 @@
+who:孙超，宋子微，王新宇，孙康
+when：第八周
+what：完成了迭代二实现中问题的讨论修复
+how long：4h
+arrived solution：项目实现

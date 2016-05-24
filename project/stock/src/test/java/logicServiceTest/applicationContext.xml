@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+           
+        
+    <!--action-->   
+	<bean id="loginAction" class="action.Login">
+		<property name="controller" >
+			<ref bean="ChosenStockController"></ref>
+		</property>
+	</bean>
+	<bean id="stockInfoAction" class="action.StockInfo">
+		<property name="controller">
+			<ref bean="SpecificInfoController"></ref>
+		</property>
+		<property name="controller2">
+			<ref bean="GraphController"></ref>
+		</property>
+	</bean>
+      
+      
+      
+    <!--controller-->   
+	<bean id="GraphController" class="controller.GraphController">
+		<property name="bLserivce">
+			<ref bean="GraphBL"></ref>
+		</property>
+	</bean>
+	
+	
+	<bean id="ChosenStockController" class="controller.ChosenStockController">
+		<property name="blService">
+			<ref bean="chosenStockBL"></ref>
+		</property>
+	</bean>
+	
+	<bean id="SpecificInfoController" class="controller.SpecificInfoController">
+		<property name="specific">
+			<ref bean="SpecificInfoLogic"></ref>
+		</property>
+	</bean>
+	
+	<bean id="StatisticsController" class="controller.StatisticsController">
+		<property name="blService">
+			<ref bean="StatisticsBL"></ref>
+		</property>
+	</bean>
+	
+	
+	<!--logic-->   
+	<bean id="chosenStockBL" class="logic.ChosenStockBL">
+		<property name="service" >
+		<ref bean="chosenStockData"></ref>
+		</property>
+	</bean>
+	
+	<bean id="GraphBL" class="logic.GraphBL">
+		<property name="graphService">
+			<ref bean="GraphData"></ref>
+		</property>
+		<property name="chosenStockService">
+			<ref bean="chosenStockData"></ref>
+		</property>
+		<property name="specificInfoDataService">
+			<ref bean="SpecificInfoData"></ref>
+		</property>
+	</bean>
+	
+	<bean id="SpecificInfoLogic" class="logic.SpecificInfoLogic">
+		<property name="service">
+			<ref bean="SpecificInfoData"></ref>
+		</property>
+	</bean>
+	
+	<bean id="StatisticsBL" class="logic.StatisticsBL">
+		<property name="ChosenService">
+			<ref bean="chosenStockData"></ref>
+		</property>
+		<property name="specificService">
+			<ref bean="SpecificInfoData"></ref>
+		</property>
+	</bean>
+	
+	
+	
+	
+	
+	
+	<!--data-->   
+	<bean id="chosenStockData" class="DataWeb.ChosenStockData">
+	</bean>
+	
+	<bean id="GraphData" class="DataWeb.GraphData">
+	</bean>
+	
+	<bean id="SpecificInfoData" class="DataWeb.SpecificInfoData">
+	</bean>
+	
+</beans>

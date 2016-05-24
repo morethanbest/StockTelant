@@ -1,0 +1,5 @@
+who:孙超，宋子微，王新宇，孙康
+when：第十一周
+what：迭代三中各自分工的讨论
+how long：3h
+arrived solution：初步达成共识。王新宇和孙超依然负责前端，学习html，js，css技术，孙康和宋子微负责后端的搭建维护，学习apache、mysql等搭建。

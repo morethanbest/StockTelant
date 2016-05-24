@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.BenchmarkDialogController">
+   <children>
+      <DatePicker fx:id="start" layoutX="245.0" layoutY="38.0" onAction="#refresh" />
+      <DatePicker fx:id="end" layoutX="543.0" layoutY="38.0" onAction="#refresh" />
+      <SplitPane dividerPositions="0.054" layoutY="74.0" prefHeight="627.0" prefWidth="1001.0">
+         <items>
+            <AnchorPane prefHeight="486.0" prefWidth="214.0" SplitPane.resizableWithParent="false">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#showDayK" prefHeight="23.0" prefWidth="54.0" text="日k" />
+                  <Button layoutY="23.0" mnemonicParsing="false" onAction="#showWeekK" prefHeight="23.0" prefWidth="54.0" text="周k" />
+                  <Button layoutY="46.0" mnemonicParsing="false" onAction="#showMonthK" prefHeight="23.0" prefWidth="54.0" text="月k" />
+               </children>
+            </AnchorPane>
+            <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+               <items>
+                  <BorderPane fx:id="borderPane" prefHeight="200.0" prefWidth="200.0" />
+                  <BorderPane fx:id="borderPaneB" prefHeight="200.0" prefWidth="200.0" />
+               </items>
+            </SplitPane>
+         </items>
+      </SplitPane>
+      <Label layoutX="18.0" layoutY="14.0" text="大盘数据对比">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="192.0" layoutY="42.0" text="开始：" />
+      <Label layoutX="493.0" layoutY="42.0" text="截止：" />
+   </children>
+</AnchorPane>

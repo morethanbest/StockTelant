@@ -1,0 +1,25 @@
+who:孙康
+
+
+
+when:第九周
+
+
+what:安装了数据库，并用java实现了股票信息的导入。
+problem:数据库使用不熟练
+todo:学习web框架和apache服务器和mysql的搭建。寻找合适的第三方数据api
+who:宋子微when:第九周
+
+what:寻找逻辑层可以增加的功能 problem: 逻辑功能不够多  
+
+todo:完善逻辑功能
+who:孙超when:第九周
+
+what:对界面进行最后的检测和修复 problem: 界面单一，美化不够  
+
+todo:结束迭代二的界面工作
+who:王新宇when:第九周
+
+what:对界面进行最后的检测和修复 problem: 界面单一，美化不够  
+
+todo:结束迭代二的界面工作

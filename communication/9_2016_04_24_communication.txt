@@ -1,0 +1,5 @@
+who:孙超，宋子微，王新宇，孙康
+when：第九周
+what：迭代三的功能设计初步讨论以及界面原型讨论
+how long：4h
+arrived solution：初步达成共识

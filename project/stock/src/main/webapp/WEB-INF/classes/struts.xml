@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE struts PUBLIC  
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"  
+    "http://struts.apache.org/dtds/struts-2.3.dtd">  
+  
+  
+    <struts>  
+        <package name="struts2" extends="struts-default">  
+            <action name="login" class="loginAction">  
+                <result>/home.jsp</result>  
+            </action>  
+             <action name="stockInfo" class="stockInfoAction">  
+                <result>/stockinfo.jsp</result>  
+            </action> 
+            <action name="signIn" class="signInAction">  
+                <result>/home.jsp</result>  
+                <result name="input">/login.jsp</result>
+            </action> 
+            <action name="createAccount" class="createAccountAction">  
+                <result>/login.jsp</result>  
+                <result name="input">/login.jsp</result>
+            </action> 
+        </package>  
+    </struts>  

@@ -1,0 +1,25 @@
+who:孙康
+
+
+
+when:第十周
+
+
+what:寻找到了合适的第三方数据api 
+problem:数据库需要重新和apache等联合搭建，所以已经准备好的数据库又被重新卸掉了
+todo:学习web框架搭建
+who:宋子微when:第十周
+
+what:开始学习web技术 problem: 不知道web如何与现有的项目结合  
+
+todo:使用web技术
+who:孙超when:第十周
+
+what:学习web技术，搭建web平台 problem:未掌握web的编写技巧  
+
+todo:学习使用web技术
+who:王新宇when:第十周
+
+what:学习html，css，JavaScript problem:学习进度慢  
+
+todo:继续学习网页设计

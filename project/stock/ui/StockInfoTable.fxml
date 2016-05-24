@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="434.0" prefWidth="864.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.StockInfoTableController">
+   <children>
+      <TableView fx:id="stockTable" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="434.0" prefWidth="874.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <columns>
+            <TableColumn fx:id="dateColumn" prefWidth="100.0" text="日期" />
+            <TableColumn fx:id="openColumn" prefWidth="83.0" text="开盘价" />
+            <TableColumn fx:id="closeColumn" prefWidth="83.0" text="收盘价" />
+            <TableColumn fx:id="highColumn" prefWidth="83.0" text="最高价" />
+            <TableColumn fx:id="lowColumn" prefWidth="83.0" text="最低价" />
+            <TableColumn fx:id="adjColumn" prefWidth="83.0" text="后复权价" />
+            <TableColumn fx:id="volumeColumn" prefWidth="100.0" text="成交量" />
+            <TableColumn fx:id="turnoverColumn" prefWidth="83.0" text="转手率" />
+            <TableColumn fx:id="peColumn" prefWidth="83.0" text="市盈率" />
+            <TableColumn fx:id="pbColumn" prefWidth="83.0" text="市净率" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

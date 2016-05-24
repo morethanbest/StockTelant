@@ -1,0 +1,33 @@
+who:孙康
+
+
+when:第七周
+
+what:修复了数据层的一些问题和bug。
+
+
+problem:   
+
+todo:帮助其他组员的工作
+who:王新宇when:第七周
+
+what:完善周k月k图，修复界面bug
+
+
+problem: 不会用css  
+
+todo:完成整个界面绘制
+who:孙超when:第七周
+
+what:完善界面布局，修复一些bug
+
+
+problem: 界面单调  
+
+todo:完善界面
+who:宋子微when:第七周
+
+what:完善逻辑层，修复一些bug problem: 逻辑功能不够多  
+
+todo:完善逻辑功能
+

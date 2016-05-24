@@ -1,0 +1,5 @@
+who:孙超，宋子微，王新宇，孙康
+when：第六周
+what：进行了迭代二的实现工作（未完全完成）
+how long：8h
+arrived solution：项目部分实现

@@ -1,0 +1,1 @@
+双击运行StockTalent.exe即可安装，安装完后在开始菜单中点击StockTalent运行

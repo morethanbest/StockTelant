@@ -1,0 +1,6 @@
+who:孙超，宋子微，王新宇，孙康
+when：第三周
+what：完成了项目迭代一的最终定型，包括bug的修复以及文档的编写和迭代二的初步计划
+how long：8h
+arrived solution：迭代二先研究java和python混合编程的问题， 先制作出一个简版， 便于解决python的打包问题等
+

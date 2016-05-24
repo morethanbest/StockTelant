@@ -1,0 +1,17 @@
+﻿who:孙康
+when:第三周
+what:完成了迭代一数据层的最终实现和一些bug的修复
+problem:数据层可能还有一些bug未发现
+todo:预计下周尝试用python画图交给界面层展示，解决python与java混合编程的问题。同时研究K线图等图表的画法
+who:宋子微
+when:第三周
+what:完成了迭代一逻辑层的最终实现和本地缓存功能problem:逻辑层可能还有一些bug未发现
+todo:预计下周尝试解决python与java混合编程的问题，同时研究迭代二中需要使用的统计方法
+who:孙超
+when:第三周
+what:完成了迭代一界面层的部分内容problem:界面不够美化
+todo:预计下周尝试在java界面中显示Python生成的图表问题，同时研究迭代二中需要使用的统计方法
+who:王新宇
+when:第三周
+what:修复界面层的一些bugproblem:筛选功能没有实现
+todo:预计下周尝试在java界面中显示Python生成的图表问题，同时研究迭代二中需要使用的统计方法
