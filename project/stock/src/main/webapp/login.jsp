@@ -166,7 +166,7 @@ JSONArray kjs = gc.getBenchmarkKdate("2010-01-01", "2016-05-01");
 		</script>
 		 <div class="registration_form">
 		 <!-- Form -->
-			<s:form action="">
+			<form action="createAccount.action">
 				<div>
 					<label>
 						<input placeholder="username" type="text" tabindex="3" required="">
@@ -182,7 +182,7 @@ JSONArray kjs = gc.getBenchmarkKdate("2010-01-01", "2016-05-01");
 				<div>
 					<input type="submit" value="create an account">
 				</div>
-			</s:form>
+			</form>
 			<!-- /Form -->
 		</div>
 	</div>
@@ -190,10 +190,10 @@ JSONArray kjs = gc.getBenchmarkKdate("2010-01-01", "2016-05-01");
 		<h2>existing user</h2>
 		 <div class="registration_form">
 		 <!-- Form -->
-			<form>
+			<form action="signIn.action">
 				<div>
 					<label>
-						<input placeholder="email:" type="email" tabindex="3" required="">
+						<input placeholder="username" type="email" tabindex="3" required="">
 					</label>
 				</div>
 				<div>
