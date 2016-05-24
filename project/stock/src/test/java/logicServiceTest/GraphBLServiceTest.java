@@ -43,7 +43,7 @@ public class GraphBLServiceTest extends BaseJunit4Test{
 		String enddate="2016-05-20";
 		String code="sz002008";
 		List<DealVO> dealVOs=blservice.getDealVO(code, begindate, enddate);
-		assertEquals(376, dealVOs.size());
+		assertEquals(36, dealVOs.size());
 		assertEquals(dealVOs.get(0).getDate(), "2016-04-01");
 		begindate="2016-04-10";
 		enddate="2016-04-07";

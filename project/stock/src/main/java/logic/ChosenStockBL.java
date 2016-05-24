@@ -56,7 +56,12 @@ public class ChosenStockBL implements ChosenStockBLService {
 			polist=service.getChosenList();
 		}
 		List<OriginInfoVO> voList=TransObject.transToOriginList(polist);
-		BenchmarkPO po=service.getBenchmark(DateServ.getDate());
+		String date=DateServ.getDate();
+		BenchmarkPO po=service.getBenchmark(date);
+		while(po==null){					//如果没有这一天的大盘数据
+			date=DateServ.getDateBefore(1, date);
+			po=service.getBenchmark(date);
+		}
 		try{
 			voList.add(0, new OriginInfoVO(po.getDate(), po.getCode(),"沪深300", po.getOpen(), po.getClose(), po.getHighest()
 				, po.getLowest(), po.getVolume()));	

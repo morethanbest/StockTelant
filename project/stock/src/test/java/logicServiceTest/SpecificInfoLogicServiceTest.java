@@ -18,8 +18,7 @@ public class SpecificInfoLogicServiceTest extends BaseJunit4Test{
 	
 	@Test
 	public void getInfoByRangeTest() {
-		SpecificInfoLogicService specific=new SpecificInfoLogic();
-		 List<ConcreteInfoVO> list=specific.getInfoByRange("2016-04-01", "2016-05-20", "sh000100");
+		 List<ConcreteInfoVO> list=blService.getInfoByRange("2016-04-01", "2016-05-20", "sh000100");
 		 assertEquals(list.get(0).getDate(), "2016-04-01");
 	}
 

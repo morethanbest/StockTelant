@@ -41,7 +41,7 @@ public class ChosenStockBLServiceTest extends BaseJunit4Test{
 	@Test
 	public void getChosenListTest() {
 		List<OriginInfoVO> voList=chosenStockBL.getChosenList();
-		assertEquals(voList.size(),30);
+		assertEquals(voList.size(),31);		//多一个因为算上大盘
 		
 		
 	}

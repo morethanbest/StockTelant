@@ -39,7 +39,7 @@ public class StatisticsBL implements StatisticsBLService {
 	@Override
 	public List<Statistics> IndustryStatistics(String industry, String starttime, String endtime) {
 		// TODO Auto-generated method stub
-		List<String> codes=ChosenService.getSpecificFirmCode(industry);
+		List<String> codes=ChosenService.getSpecificFirmCode(industry);		//行业内股票所有代码
 		List<Statistics> statistics=new ArrayList<>();
 		List<Statistics> codeStatistics;
 		if(codes.size()<1){

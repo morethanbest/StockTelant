@@ -19,13 +19,13 @@
 			<ref bean="GraphController"></ref>
 		</property>
 	</bean>
-	<bean id ="createAccount" class="action.CreateAccount">
+	<bean id ="createAccountAction" class="action.CreateAccount">
 		<property name="controller">
 			<ref bean="UserController"></ref>
 		</property>
 	</bean>
 	
-	<bean id ="signIn" class="action.SignIn">
+	<bean id ="signInAction" class="action.SignIn">
 		<property name="controller">
 			<ref bean="UserController"></ref>
 		</property>
